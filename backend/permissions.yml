@@ -1,0 +1,29 @@
+user:
+  name: System Users
+  children:
+    upsert:
+      name: Create/Update Users
+    delete:
+      name: Delete Users
+setting:
+  name: Setting
+  children:
+    email:
+      name: Email Setting
+    general:
+      name: General Setting
+
+recommended:
+  name: Recommended
+  children:
+    upsert:
+      name: Create/Update Recommended
+    delete:
+      name: Delete Recommended
+recommended-category:
+  name: Recommended Category
+  children:
+    upsert:
+      name: Create/Update Recommended Category
+    delete:
+      name: Delete Recommended Category

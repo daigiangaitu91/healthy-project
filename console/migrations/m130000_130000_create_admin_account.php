@@ -18,6 +18,7 @@ class m130000_130000_create_admin_account extends Migration{
 			'email'         => 'root@example.com',
 			'first_name'    => 'admin',
 			'last_name'     => 'admin',
+			'type'          => \common\models\User::TYPE_ADMIN,
 			'auth_key'      => Yii::$app->security->generateRandomString(),
 			'password_hash' => Yii::$app->security->generatePasswordHash('root'),
 			'updated_at'    => time(),

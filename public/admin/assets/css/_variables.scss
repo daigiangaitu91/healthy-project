@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,400i,700,700i,900,900i&subset=latin-ext');
+@import "../fonts/FontAwesome/scss/fa-solid";
+@import "../fonts/FontAwesome/scss/fa-regular";
+@import "../fonts/FontAwesome/scss/fa-brands";
+@import "../fonts/FontAwesome/scss/fontawesome";
+$primaryColor: #3c3750;
+$secondaryColor: #7E7B89;
+$dangerColor: #dc3545;
+$successColor: #28a745;
+$greyColor: #d2d6de;
+$infoColor: #17a2b8;
+$warningColor: #ffc107;
+
+@mixin _input_shadow {
+    -webkit-box-shadow: 0px 3px 20px 0px rgba($greyColor, 0.11);
+    -moz-box-shadow: 0px 3px 20px 0px rgba($greyColor, 0.11);
+    box-shadow: 0px 3px 20px 0px rgba($greyColor, 0.11);
+}

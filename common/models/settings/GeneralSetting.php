@@ -8,7 +8,7 @@ use Yii;
 /**
  * Class GeneralSetting
  *
- * @package backend\models
+ * @package common\models\settings
  */
 class GeneralSetting extends Setting{
 
@@ -16,6 +16,9 @@ class GeneralSetting extends Setting{
 	public $admin_email;
 	public $domain;
 
+	/**
+	 * @return array
+	 */
 	public function rules(){
 		return [
 			[['site_name', 'admin_email', 'domain'], 'string'],
@@ -24,11 +27,14 @@ class GeneralSetting extends Setting{
 		];
 	}
 
+	/**
+	 * @return array
+	 */
 	public function attributeLabels(){
 		return [
 			'site_name'   => Yii::t('common', 'Site name'),
 			'admin_email' => Yii::t('common', 'Admin Email'),
-			'domain' => Yii::t('common', 'Domain'),
+			'domain'      => Yii::t('common', 'Domain'),
 		];
 	}
 }

@@ -6,6 +6,7 @@ namespace common\base;
 use common\models\settings\GeneralSetting;
 use Exception;
 use Yii;
+use yii\helpers\FileHelper;
 
 /**
  * Class AppHelper
@@ -33,22 +34,23 @@ class AppHelper{
 	 * @param string $field
 	 * @param bool $private
 	 *
-	 * @return bool|string
+	 * @return string
+	 * @throws \yii\base\Exception
 	 */
 	public static function uploadPath($field = '', $private = FALSE){
 		if ($private){
-			$default_path = Yii::getAlias('@private_files');
+			$default_path = Yii::getAlias('@private_files/');
 		}else{
-			$default_path = Yii::getAlias('@files');
+			$default_path = Yii::getAlias('@files/');
 		}
 
-		$default_path .= '/' . rtrim($field, '/') . '/';
-
-		if (!file_exists($default_path)){
-			mkdir($default_path, 0777, TRUE);
+		if (!empty($field)){
+			$default_path .= $field . '/';
 		}
-
-		return $default_path;
+		$default_path .= date('Y/m');
+		if (FileHelper::createDirectory($default_path)){
+			return rtrim($default_path, '/') . '/';
+		}
 	}
 
 	/**
@@ -79,20 +81,6 @@ class AppHelper{
 		return file_exists($file_path);
 	}
 
-	/**
-	 * @param string $image
-	 *
-	 * @return string
-	 */
-	public static function removeImage($image){
-		$default_path = Yii::getAlias('@files_dir');
-		$full_path    = $default_path . $image;
-		if (AppHelper::deleteFile($full_path)){
-			return '/images/default-img.png';
-		}
-
-		return '';
-	}
 
 	/**
 	 * Get full path for image

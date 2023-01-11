@@ -66,7 +66,7 @@ class UrlManager extends \yii\web\UrlManager{
 				return $this->adminUrl;
 			}
 
-			if ($this->app == Url::PUBLIC){
+			if ($this->app == Url::FRONTEND){
 				return $this->publicUrl;
 			}
 		}

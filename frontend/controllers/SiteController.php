@@ -72,9 +72,7 @@ class SiteController extends Controller{
 	 * @return mixed
 	 */
 	public function actionIndex(){
-		if(\Yii::$app->user->identity){
-			//return $this->redirect('admin/', 302);
-		}
+		return $this->redirect('admin/', 302);
 		return $this->render('index');
 	}
 

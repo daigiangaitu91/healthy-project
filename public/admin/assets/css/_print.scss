@@ -1,0 +1,32 @@
+@media print {
+    body {
+        padding: 0;
+    }
+
+    header#main, .sidebar, .filter, footer#footer, a[href]:after, .grid-view .summary {
+        display: none;
+    }
+
+    .sidebar + .main {
+        width: 100%;
+    }
+
+    .box {
+        padding: 0;
+    }
+
+    header#title{
+        margin-bottom: 10px;
+    }
+
+    .grid-view {
+        .table th {
+            background-color: #ebebeb !important;
+            border: 1px solid #ddd !important;
+        }
+
+        .table td {
+            border: 1px solid #ddd !important;
+        }
+    }
+}

@@ -1,0 +1,36 @@
+user:
+  label: Users
+  permission: user
+  icon: 'fas fa-user-friends'
+  children:
+    user:
+      label: Users
+      link: '/user/index'
+      permission: user
+      icon: 'fas fa-user-friends'
+recommended:
+  label: Recommended
+  permission: recommended-category
+  icon: 'fas fa-user-friends'
+  children:
+    recommended-category:
+      label: Recommnended Category
+      link: '/recommended-category/index'
+      permission: user
+      icon: 'fas fa-user-friends'
+    recommended:
+      label: Recommnended
+      link: '/recommended/index'
+      permission: role
+      icon: 'fas fa-users'
+
+setting:
+  label: Setting
+  permission: setting
+  icon: 'fas fa-cog'
+  children:
+    basic:
+      label: System Setting
+      link: '/setting/index'
+      permission: setting
+      icon: 'fas fa-cog'

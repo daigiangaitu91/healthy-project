@@ -1,0 +1,51 @@
+.modal {
+    &.slide-from-right {
+        display: block !important;
+        left: inherit;
+        right: -500px;
+        width: 100%;
+        max-width: 400px;
+        -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+        background: white;
+        -webkit-transition: all .5s ease-in-out;
+        -moz-transition: all .5s ease-in-out;
+        -ms-transition: all .5s ease-in-out;
+        -o-transition: all .5s ease-in-out;
+        transition: all .5s ease-in-out;
+        z-index: 1050;
+
+        &.modal-lg {
+            right: -700px;
+            max-width: 600px;
+        }
+
+        &.in {
+            left: inherit;
+            right: 0;
+        }
+
+        .modal-dialog {
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            .modal-content {
+                border-radius: 0;
+                box-shadow: none;
+                border: none;
+            }
+        }
+
+        .thumbnail {
+            max-width: 200px;
+            margin: 10px auto;
+        }
+    }
+    &.fade{
+        z-index: 1070;
+    }
+}
+
+.modal-backdrop.in.fade{
+    z-index: 1060;
+}
