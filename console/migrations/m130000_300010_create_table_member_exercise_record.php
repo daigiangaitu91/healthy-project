@@ -20,7 +20,7 @@ class m130000_300010_create_table_member_exercise_record extends Migration{
 			'id'            => $this->primaryKey(),
 			'user_id'       => $this->integer(),
 			'exercise_date' => $this->integer(),
-			'description'   => $this->double(),
+			'description'   => $this->text(),
 			'kcal'          => $this->double(),
 			'duration'      => $this->double(),
 			'status'        => $this->integer()->notNull()->defaultValue('10'),

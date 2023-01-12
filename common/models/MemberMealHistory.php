@@ -9,8 +9,9 @@ use Yii;
  *
  * @property int $id
  * @property int|null $user_id
- * @property int|null $meal_name
- * @property float|null $category
+ * @property string|null $meal_name
+ * @property int|null $date_meal
+ * @property int|null $category
  * @property float|null $kcal
  * @property string|null $thumbnail
  * @property int $status
@@ -35,10 +36,9 @@ class MemberMealHistory extends \common\models\BaseActiveRecord{
 	 */
 	public function rules(){
 		return [
-			[['user_id', 'meal_name', 'status', 'created_by', 'created_at', 'updated_by', 'updated_at'], 'integer'],
+			[['user_id', 'status', 'date_meal', 'created_by', 'created_at', 'updated_by', 'updated_at'], 'integer'],
 			[['category', 'kcal'], 'number'],
-			[['created_by', 'created_at'], 'required'],
-			[['thumbnail'], 'string', 'max' => 255],
+			[['thumbnail', 'meal_name'], 'string', 'max' => 255],
 			[['user_id'], 'exist', 'skipOnError' => TRUE, 'targetClass' => User::class, 'targetAttribute' => ['user_id' => 'id']],
 		];
 	}
@@ -51,6 +51,7 @@ class MemberMealHistory extends \common\models\BaseActiveRecord{
 			'id'         => Yii::t('common', 'ID'),
 			'user_id'    => Yii::t('common', 'User ID'),
 			'meal_name'  => Yii::t('common', 'Meal Name'),
+			'date_meal'  => Yii::t('common', 'Date Meal'),
 			'category'   => Yii::t('common', 'Category'),
 			'kcal'       => Yii::t('common', 'Kcal'),
 			'thumbnail'  => Yii::t('common', 'Thumbnail'),

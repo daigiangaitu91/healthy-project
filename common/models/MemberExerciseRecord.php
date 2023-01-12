@@ -36,8 +36,8 @@ class MemberExerciseRecord extends \common\models\BaseActiveRecord{
 	public function rules(){
 		return [
 			[['user_id', 'exercise_date', 'status', 'created_by', 'created_at', 'updated_by', 'updated_at'], 'integer'],
-			[['description', 'kcal', 'duration'], 'number'],
-			[['created_by', 'created_at'], 'required'],
+			[[ 'kcal', 'duration'], 'number'],
+			[['description'], 'string'],
 			[['user_id'], 'exist', 'skipOnError' => TRUE, 'targetClass' => User::class, 'targetAttribute' => ['user_id' => 'id']],
 		];
 	}

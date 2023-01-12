@@ -100,6 +100,12 @@ class UrlManager extends \yii\web\UrlManager{
 				'<controller:[a-z0-9\-]+>/<action:[a-z0-9\-]+>/<id:\d+>' => '<controller>/<action>',
 				'<controller:[a-z0-9\-]+>/<action:[a-z0-9\-]+>'          => '<controller>/<action>',
 			],
+			'api'          => [
+				'<controller:[a-z0-9\-]+>/<id:\d+>'                      => '<controller>/index',
+				'<controller:[a-z0-9\-]+>'                               => '<controller>/index',
+				'<controller:[a-z0-9\-]+>/<action:[a-z0-9\-]+>/<id:\d+>' => '<controller>/<action>',
+				'<controller:[a-z0-9\-]+>/<action:[a-z0-9\-]+>'          => '<controller>/<action>',
+			],
 			'app-frontend' => [
 				'/'                                                      => 'site/index',
 				'<controller:[a-z0-9\-]+>'                               => '<controller>/index',

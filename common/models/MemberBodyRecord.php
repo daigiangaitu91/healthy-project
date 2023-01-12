@@ -37,7 +37,6 @@ class MemberBodyRecord extends \common\models\BaseActiveRecord{
 		return [
 			[['user_id', 'date_record', 'status', 'created_by', 'created_at', 'updated_by', 'updated_at'], 'integer'],
 			[['weight', 'body_fat', 'target_date'], 'number'],
-			[['created_by', 'created_at'], 'required'],
 			[['user_id'], 'exist', 'skipOnError' => TRUE, 'targetClass' => User::class, 'targetAttribute' => ['user_id' => 'id']],
 		];
 	}

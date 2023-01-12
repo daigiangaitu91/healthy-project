@@ -19,8 +19,9 @@ class m130000_300020_create_table_member_meal_history extends Migration{
 		$this->createTable('{{%member_meal_history}}', [
 			'id'         => $this->primaryKey(),
 			'user_id'    => $this->integer(),
-			'meal_name'  => $this->integer(),
-			'category'   => $this->double(),
+			'meal_name'  => $this->string(255),
+			'date_meal'  => $this->integer(),
+			'category'   => $this->integer(),
 			'kcal'       => $this->double(),
 			'thumbnail'  => $this->string(),
 			'status'     => $this->integer()->notNull()->defaultValue('10'),
