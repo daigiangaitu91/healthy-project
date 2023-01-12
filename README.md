@@ -55,8 +55,8 @@ Setup
     - use window run init.bat
     - use linux run php init
 3. create new database and config database information into file common\config\main-local.php
-4. run php yii migrate ( if import db skip step )
-5. run php yii permissions ( if import db skip step )
+4. run php yii migrate ( if import db healthy-project.sql skip step )
+5. run php yii permissions ( if import db healthy-project.sql  skip step )
 6. config vhost on server
     - apache
     ```
@@ -101,7 +101,9 @@ Use Guide
 1. Admin
     - Management User: have two type user is Staff and Member
         + Staff : user can login into admin to management
-        + Member : user can login from api 
+            - account example : root/root
+        + Member : user can login from api
+            - account example : nguyennam/abc@123 
     - Management Recommended Category : Management Recommended Category ( Column, Diet, Healthy and Bealty )
     - Management Recommended : Management Recommended with category to display on Recommended page ( api Recommendede )
 2. API : Please check api document https://documenter.getpostman.com/view/1254232/2s8ZDR7kpH
@@ -111,3 +113,5 @@ Use Guide
     - Meal History : Member can create meal by date and get list history
     - Body Record : Member submit target for date and submit infor weight, body_fat and list history by date, week, month
     - Exercise : Member submit exercise of date    
+    
+ 
